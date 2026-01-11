@@ -11,8 +11,11 @@ services:
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASS}
       MYSQL_ROOT_PASSWORD: rootpassword
-    # volumes
-    # Network
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - hustlink_network
 
   # --- 2. APP SERVICE ---
   app_service:
@@ -22,14 +25,15 @@ services:
     expose:
       - "3000"
     environment:
-      - DB_HOST=db_service
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
-      - DB_NAME=${DB_NAME}
-      - APP_PORT=3000
+      DB_HOST: db_service
+      DB_USER: ${DB_USER}
+      DB_PASS: ${DB_PASS}
+      DB_NAME: ${DB_NAME}
+      APP_PORT: 3000
     depends_on:
       - db_service
-    # Network
+    networks:
+      - hustlink_network
 
   # --- 3. NGINX SERVICE ---
   nginx_service:
@@ -37,11 +41,17 @@ services:
     container_name: nginx_${GROUP_NAME}
     restart: always
     ports:
-      - "${APP_PORT}:80"
+      - "2584:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - app_service
-    # Network
-    # volumes
+    networks:
+      - hustlink_network
 
-#--- VOLUMES AND NETWORKS ---
-# tambahkan bagian volumes dan networks di sini
+# --- VOLUMES AND NETWORKS ---
+volumes:
+  db_data:
+
+networks:
+  hustlink_network:
