@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Tekser</title>
-  </head>
-  <body>
-    <h1>Hello World! Silakan edit file ini.</h1>
-  </body>
-</html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HustLink | Portal Karir Terpadu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <div class="bg-blue-600 p-1.5 rounded-lg text-white">
+                        <i data-lucide="link-2" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight text-blue-900">HustLink<span class="text-blue-500">.</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                    <a href="#" class="hover:text-blue-600 transition">Cari Lowongan</a>
+                    <a href="#" class="hover:text-blue-600 transition">Riwayat Lamaran</a>
+                    <div class="flex items-center gap-3 pl-6 border-l border-slate-200">
+                        <div class="text-right">
+                            <p class="text-slate-900 font-semibold leading-none">Abdullah</p>
+                            <p class="text-[10px] text-slate-500 mt-1 uppercase tracking-wider font-bold">Applicant</p>
+                        </div>
+                        <img class="h-9 w-9 rounded-full border-2 border-white shadow-sm" src="https://ui-avatars.com/api/?name=Abdullah&background=1E40AF&color=fff" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white border-b border-slate-200 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Langkah Besar Karirmu <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-emerald-500">Dimulai di Sini.</span>
+            </h1>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg">
+                Portal karir internal terpusat untuk akses informasi lowongan kerja yang transparan, rapi, dan mudah dijangkau.
+            </p>
+
+            <div class="mt-10 max-w-3xl mx-auto bg-white p-2 rounded-2xl shadow-xl border border-slate-100 flex flex-col md:flex-row gap-2">
+                <div class="flex-1 relative flex items-center">
+                    <i data-lucide="search" class="absolute left-4 text-slate-400 w-5 h-5"></i>
+                    <input type="text" placeholder="Posisi apa yang Anda cari?" class="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-50 border-transparent focus:bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition outline-none">
+                </div>
+                <div class="md:w-48 relative flex items-center">
+                    <i data-lucide="map-pin" class="absolute left-4 text-slate-400 w-5 h-5"></i>
+                    <select class="w-full pl-12 pr-4 py-3 rounded-xl bg-slate-50 border-transparent appearance-none text-slate-600 focus:ring-2 focus:ring-blue-500 outline-none">
+                        <option>Semua Lokasi</option>
+                        <option>Jakarta</option>
+                        <option>Remote</option>
+                    </select>
+                </div>
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-xl transition-all shadow-lg shadow-blue-200">
+                    Cari Sekarang
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h3 class="text-2xl font-bold text-slate-900 tracking-tight">Lowongan Tersedia</h3>
+                <p class="text-slate-500 mt-1">Dapatkan kesempatan terbaik dari tim internal kami.</p>
+            </div>
+            <div class="flex gap-2">
+                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition"><i data-lucide="grid" class="w-5 h-5"></i></button>
+                <button class="p-2 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition"><i data-lucide="list" class="w-5 h-5"></i></button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <%# Simulasi data looping EJS %>
+            <div class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 relative overflow-hidden">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                        <i data-lucide="code-2" class="w-7 h-7"></i>
+                    </div>
+                    <span class="bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase px-2.5 py-1 rounded-full tracking-wider">OPEN</span>
+                </div>
+                
+                <h4 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Front-End Developer</h4>
+                <p class="text-slate-400 text-sm font-medium mt-1">Tech Stack Department</p>
+                
+                <div class="mt-6 flex flex-wrap gap-4 border-t border-slate-100 pt-6">
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-slate-300"></i> Jakarta (Hybrid)
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-slate-300"></i> Full-time
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <a href="/detail" class="flex items-center justify-center gap-2 w-full py-3 bg-slate-900 text-white rounded-xl font-bold hover:bg-blue-600 transition-all">
+                        Lamar Posisi Ini <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-400 hover:shadow-xl transition-all duration-300 relative overflow-hidden">
+                <div class="flex justify-between items-start mb-6
