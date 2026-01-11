@@ -44,3 +44,5 @@ CREATE TABLE IF NOT EXISTS applicants (
 
 -- Dummy Data (Opsional tapi disarankan [cite: 45])
 INSERT INTO categories (category_name) VALUES ('IT'), ('Marketing'), ('Finance');
+
+--fixx
